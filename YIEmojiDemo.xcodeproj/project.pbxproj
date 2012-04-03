@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F79F68D1528AF2B00719E42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F79F68C1528AF2B00719E42 /* UIKit.framework */; };
+		1F79F68F1528AF2B00719E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F79F68E1528AF2B00719E42 /* Foundation.framework */; };
+		1F79F6911528AF2B00719E42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F79F6901528AF2B00719E42 /* CoreGraphics.framework */; };
+		1F79F6971528AF2B00719E42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F79F6951528AF2B00719E42 /* InfoPlist.strings */; };
+		1F79F6991528AF2B00719E42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F6981528AF2B00719E42 /* main.m */; };
+		1F79F69D1528AF2B00719E42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F69C1528AF2B00719E42 /* AppDelegate.m */; };
+		1F79F6A01528AF2B00719E42 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F79F69E1528AF2B00719E42 /* MainStoryboard.storyboard */; };
+		1F79F6A31528AF2B00719E42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F6A21528AF2B00719E42 /* ViewController.m */; };
+		1F79F6B01528AFA700719E42 /* NSString+YIEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */; };
+		1F79F6B21528B08500719E42 /* YIEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F79F6B11528B08500719E42 /* YIEmoji.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F79F6881528AF2B00719E42 /* YIEmojiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIEmojiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F79F68C1528AF2B00719E42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F79F68E1528AF2B00719E42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F79F6901528AF2B00719E42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F79F6941528AF2B00719E42 /* YIEmojiDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YIEmojiDemo-Info.plist"; sourceTree = "<group>"; };
+		1F79F6961528AF2B00719E42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F79F6981528AF2B00719E42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F79F69A1528AF2B00719E42 /* YIEmojiDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YIEmojiDemo-Prefix.pch"; sourceTree = "<group>"; };
+		1F79F69B1528AF2B00719E42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F79F69C1528AF2B00719E42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F79F69F1528AF2B00719E42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1F79F6A11528AF2B00719E42 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1F79F6A21528AF2B00719E42 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F79F6AE1528AFA700719E42 /* NSString+YIEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YIEmoji.h"; sourceTree = "<group>"; };
+		1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YIEmoji.m"; sourceTree = "<group>"; };
+		1F79F6B11528B08500719E42 /* YIEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YIEmoji.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F79F6851528AF2B00719E42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F79F68D1528AF2B00719E42 /* UIKit.framework in Frameworks */,
+				1F79F68F1528AF2B00719E42 /* Foundation.framework in Frameworks */,
+				1F79F6911528AF2B00719E42 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F79F67D1528AF2B00719E42 = {
+			isa = PBXGroup;
+			children = (
+				1F79F6A91528AF5000719E42 /* YIEmoji */,
+				1F79F6921528AF2B00719E42 /* YIEmojiDemo */,
+				1F79F68B1528AF2B00719E42 /* Frameworks */,
+				1F79F6891528AF2B00719E42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F79F6891528AF2B00719E42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F79F6881528AF2B00719E42 /* YIEmojiDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F79F68B1528AF2B00719E42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F79F68C1528AF2B00719E42 /* UIKit.framework */,
+				1F79F68E1528AF2B00719E42 /* Foundation.framework */,
+				1F79F6901528AF2B00719E42 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F79F6921528AF2B00719E42 /* YIEmojiDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1F79F69B1528AF2B00719E42 /* AppDelegate.h */,
+				1F79F69C1528AF2B00719E42 /* AppDelegate.m */,
+				1F79F69E1528AF2B00719E42 /* MainStoryboard.storyboard */,
+				1F79F6A11528AF2B00719E42 /* ViewController.h */,
+				1F79F6A21528AF2B00719E42 /* ViewController.m */,
+				1F79F6931528AF2B00719E42 /* Supporting Files */,
+			);
+			path = YIEmojiDemo;
+			sourceTree = "<group>";
+		};
+		1F79F6931528AF2B00719E42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F79F6941528AF2B00719E42 /* YIEmojiDemo-Info.plist */,
+				1F79F6951528AF2B00719E42 /* InfoPlist.strings */,
+				1F79F6981528AF2B00719E42 /* main.m */,
+				1F79F69A1528AF2B00719E42 /* YIEmojiDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F79F6A91528AF5000719E42 /* YIEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				1F79F6B11528B08500719E42 /* YIEmoji.bundle */,
+				1F79F6AE1528AFA700719E42 /* NSString+YIEmoji.h */,
+				1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */,
+			);
+			path = YIEmoji;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F79F6871528AF2B00719E42 /* YIEmojiDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F79F6A61528AF2B00719E42 /* Build configuration list for PBXNativeTarget "YIEmojiDemo" */;
+			buildPhases = (
+				1F79F6841528AF2B00719E42 /* Sources */,
+				1F79F6851528AF2B00719E42 /* Frameworks */,
+				1F79F6861528AF2B00719E42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YIEmojiDemo;
+			productName = YIEmojiDemo;
+			productReference = 1F79F6881528AF2B00719E42 /* YIEmojiDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F79F67F1528AF2B00719E42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Yasuhiro Inami";
+			};
+			buildConfigurationList = 1F79F6821528AF2B00719E42 /* Build configuration list for PBXProject "YIEmojiDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F79F67D1528AF2B00719E42;
+			productRefGroup = 1F79F6891528AF2B00719E42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F79F6871528AF2B00719E42 /* YIEmojiDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F79F6861528AF2B00719E42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F79F6971528AF2B00719E42 /* InfoPlist.strings in Resources */,
+				1F79F6A01528AF2B00719E42 /* MainStoryboard.storyboard in Resources */,
+				1F79F6B21528B08500719E42 /* YIEmoji.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F79F6841528AF2B00719E42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F79F6991528AF2B00719E42 /* main.m in Sources */,
+				1F79F69D1528AF2B00719E42 /* AppDelegate.m in Sources */,
+				1F79F6A31528AF2B00719E42 /* ViewController.m in Sources */,
+				1F79F6B01528AFA700719E42 /* NSString+YIEmoji.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1F79F6951528AF2B00719E42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F79F6961528AF2B00719E42 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1F79F69E1528AF2B00719E42 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F79F69F1528AF2B00719E42 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F79F6A41528AF2B00719E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F79F6A51528AF2B00719E42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F79F6A71528AF2B00719E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YIEmojiDemo/YIEmojiDemo-Prefix.pch";
+				INFOPLIST_FILE = "YIEmojiDemo/YIEmojiDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1F79F6A81528AF2B00719E42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YIEmojiDemo/YIEmojiDemo-Prefix.pch";
+				INFOPLIST_FILE = "YIEmojiDemo/YIEmojiDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F79F6821528AF2B00719E42 /* Build configuration list for PBXProject "YIEmojiDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F79F6A41528AF2B00719E42 /* Debug */,
+				1F79F6A51528AF2B00719E42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F79F6A61528AF2B00719E42 /* Build configuration list for PBXNativeTarget "YIEmojiDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F79F6A71528AF2B00719E42 /* Debug */,
+				1F79F6A81528AF2B00719E42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F79F67F1528AF2B00719E42 /* Project object */;
+}
