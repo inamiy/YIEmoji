@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ViewController : UIViewController <UIAlertViewDelegate>
+@interface ViewController : UIViewController
 
-- (IBAction)handleInputButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+
+- (IBAction)handleOKButton:(id)sender;
 
 @end

@@ -1,6 +1,6 @@
 //
 //  NSString+YIEmoji.h
-//  YIEmojiDemo
+//  YIEmoji
 //
 //  Created by Yasuhiro Inami on 12/04/03.
 //  Copyright (c) 2012年 Yasuhiro Inami. All rights reserved.
@@ -11,9 +11,9 @@
 @interface NSString (YIEmoji)
 
 - (BOOL)hasEmoji;
-- (NSUInteger)emojiContainedLength;
-- (NSString*)stringByTrimmingEmojis;
-
 - (NSArray *)componentsSeparatedByEmojis;
+
+- (NSUInteger)emojiContainedTrueLength;
+- (NSString*)stringByTrimmingEmojis;
 
 @end

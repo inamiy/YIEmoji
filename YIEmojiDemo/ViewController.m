@@ -17,6 +17,8 @@
 
 @implementation ViewController
 
+@synthesize textView = _textView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,6 +27,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -34,26 +37,14 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (IBAction)handleInputButton:(id)sender 
+- (IBAction)handleOKButton:(id)sender 
 {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Input String" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert textFieldAtIndex:0].clearButtonMode = UITextFieldViewModeWhileEditing;
-    [alert show];
-}
-
-#pragma mark -
-
-#pragma mark UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    UITextField* textField = [alertView textFieldAtIndex:0];
+    NSString* text = self.textView.text;
     
-    NSLog(@"input = %@",textField.text);
-    NSLog(@"hasEmoji = %d",[textField.text hasEmoji]);
-    NSLog(@"trueLength = %d",[textField.text emojiContainedLength]);
-    NSLog(@"emojiTrimmedString = %@",[textField.text stringByTrimmingEmojis]);
+    NSLog(@"input = %@",text);
+    NSLog(@"hasEmoji = %d",[text hasEmoji]);
+    NSLog(@"trueLength = %d",[text emojiContainedTrueLength]);
+    NSLog(@"emojiTrimmedString = %@",[text stringByTrimmingEmojis]);
 }
 
 @end
