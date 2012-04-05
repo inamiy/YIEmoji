@@ -10,6 +10,8 @@
 
 @interface NSString (YIEmoji)
 
++ (void)setupYIEmoji;
+
 - (BOOL)hasEmoji;
 - (NSArray *)componentsSeparatedByEmojis;
 

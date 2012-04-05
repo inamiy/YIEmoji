@@ -20,83 +20,89 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
 
 + (void)load
 {
-    @autoreleasepool {
-        
-        //
-        // iOS5 Unicode6.0 Emoji
-        // http://punchdrunker.github.com/iOSEmoji/table_html/index.html
-        //
-        NSURL* dataURL = [[NSBundle mainBundle] URLForResource:@"emoji" withExtension:@"json" subdirectory:@"YIEmoji.bundle"];
-        
-        NSData* data = [NSData dataWithContentsOfURL:dataURL];
-        
-        NSArray* json = nil;
-        NSError* error = nil;
-        
-        if (YI_IOS5_OR_LATER) {
-            json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        }
-        else {
-            json = AFJSONDecode(data, &error);
-        }
-        
-        if (error) {
-            NSLog(@"YIEmoji error: %@",error.localizedDescription);
-            return;
-        }
-        
-        NSMutableArray* emojis = [NSMutableArray array];
-        NSMutableCharacterSet* emojiCharacterSet = [[NSMutableCharacterSet alloc] init];
-        
-        for (NSString* utf16 in json) {
-            NSArray* bytes = [utf16 componentsSeparatedByString:@" "];
-            
-            NSMutableString* emoji = [NSMutableString string];
-            for (NSInteger i = 0; i < [bytes count]; i++) {
-                [emoji appendFormat:@"%C",[[bytes objectAtIndex:i] _hexIntValue]];
-            }
-            
-            [emojis addObject:emoji];
-            [emojiCharacterSet addCharactersInString:emoji];
-        }
-        
-        __emojis = emojis;
-        __emojiCharacterSet = emojiCharacterSet;
-        
-        
-        //
-        // iOS4 Emoji
-        // http://d.hatena.ne.jp/kurusaki/20100425/1272187639
-        //
-        if (!YI_IOS5_OR_LATER) {
-            
-            NSMutableString* iOS4EmojiString = [NSMutableString string];
-            for (unichar u = 0xE001; u <= 0xE05A; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE101; u <= 0xE15A; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE201; u <= 0xE253; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE301; u <= 0xE34D; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE401; u <= 0xE44C; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE501; u <= 0xE537; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            
-            NSMutableCharacterSet* iOS4EmojiCharacterSet = [[NSMutableCharacterSet alloc] init];
-            [iOS4EmojiCharacterSet addCharactersInString:iOS4EmojiString];
-            
-            __iOS4EmojiCharacterSet = iOS4EmojiCharacterSet;
-        }
-        
+//    // NOTE: this won't work when JSONKit is included in certain static library
+//    @autoreleasepool {
+//        [self setupYIEmoji];
+//    }
+}
+
+// FIXME: find a better way to automatically setup
++ (void)setupYIEmoji
+{
+    //
+    // iOS5 Unicode6.0 Emoji
+    // http://punchdrunker.github.com/iOSEmoji/table_html/index.html
+    //
+    NSURL* dataURL = [[NSBundle mainBundle] URLForResource:@"emoji" withExtension:@"json" subdirectory:@"YIEmoji.bundle"];
+    
+    NSData* data = [NSData dataWithContentsOfURL:dataURL];
+    
+    NSArray* json = nil;
+    NSError* error = nil;
+    
+    if (YI_IOS5_OR_LATER) {
+        json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     }
+    else {
+        json = AFJSONDecode(data, &error);
+    }
+    
+    if (error) {
+        NSLog(@"YIEmoji error: %@",error.localizedDescription);
+        return;
+    }
+    
+    NSMutableArray* emojis = [NSMutableArray array];
+    NSMutableCharacterSet* emojiCharacterSet = [[NSMutableCharacterSet alloc] init];
+    
+    for (NSString* utf16 in json) {
+        NSArray* bytes = [utf16 componentsSeparatedByString:@" "];
+        
+        NSMutableString* emoji = [NSMutableString string];
+        for (NSInteger i = 0; i < [bytes count]; i++) {
+            [emoji appendFormat:@"%C",[[bytes objectAtIndex:i] _hexIntValue]];
+        }
+        
+        [emojis addObject:emoji];
+        [emojiCharacterSet addCharactersInString:emoji];
+    }
+    
+    __emojis = emojis;
+    __emojiCharacterSet = emojiCharacterSet;
+    
+    
+    //
+    // iOS4 Emoji
+    // http://d.hatena.ne.jp/kurusaki/20100425/1272187639
+    //
+    if (!YI_IOS5_OR_LATER) {
+        
+        NSMutableString* iOS4EmojiString = [NSMutableString string];
+        for (unichar u = 0xE001; u <= 0xE05A; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        for (unichar u = 0xE101; u <= 0xE15A; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        for (unichar u = 0xE201; u <= 0xE253; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        for (unichar u = 0xE301; u <= 0xE34D; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        for (unichar u = 0xE401; u <= 0xE44C; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        for (unichar u = 0xE501; u <= 0xE537; u++) {
+            [iOS4EmojiString appendFormat:@"%C",u];
+        }
+        
+        NSMutableCharacterSet* iOS4EmojiCharacterSet = [[NSMutableCharacterSet alloc] init];
+        [iOS4EmojiCharacterSet addCharactersInString:iOS4EmojiString];
+        
+        __iOS4EmojiCharacterSet = iOS4EmojiCharacterSet;
+    }
+
 }
 
 - (BOOL)hasEmoji
