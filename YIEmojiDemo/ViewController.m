@@ -23,6 +23,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString* text = @"😄😊😃☺1⃣test2⃣☀☔☁⛄";
+    NSLog(@"text = %@",text);
+    NSLog(@"hasEmoji = %d",[text hasEmoji]);
+    NSLog(@"trueLength = %d",[text emojiContainedTrueLength]);
+    NSLog(@"emojiTrimmedString = %@",[text stringByTrimmingEmojis]);
 }
 
 - (void)viewDidUnload
@@ -37,11 +43,15 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark -
+
+#pragma mark IBActions
+
 - (IBAction)handleOKButton:(id)sender 
 {
     NSString* text = self.textView.text;
     
-    NSLog(@"input = %@",text);
+    NSLog(@"text = %@",text);
     NSLog(@"hasEmoji = %d",[text hasEmoji]);
     NSLog(@"trueLength = %d",[text emojiContainedTrueLength]);
     NSLog(@"emojiTrimmedString = %@",[text stringByTrimmingEmojis]);
