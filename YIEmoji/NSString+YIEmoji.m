@@ -10,7 +10,7 @@
 #import "AFJSONUtilities.h"
 
 static NSArray* __emojis = nil;
-static NSCharacterSet* __emojiCharacterSet = nil;
+//static NSCharacterSet* __emojiCharacterSet = nil;
 static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
 
 #define YI_IOS5_OR_LATER ([[[UIDevice currentDevice] systemVersion] compare:@"5.0"] != NSOrderedAscending)
@@ -70,7 +70,7 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
         }
         
         __emojis = emojis;
-        __emojiCharacterSet = emojiCharacterSet;
+        //__emojiCharacterSet = emojiCharacterSet;
         
         
         //
@@ -109,14 +109,22 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
 
 - (BOOL)hasEmoji
 {
-    [NSString setupYIEmoji];
+    // NOTE: using characterSet is unreliable
+//    [NSString setupYIEmoji];
+//    
+//    if (YI_IOS5_OR_LATER) {
+//        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound);
+//    }
+//    else {
+//        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound ||
+//                [self rangeOfCharacterFromSet:__iOS4EmojiCharacterSet].location != NSNotFound);
+//    }
     
-    if (YI_IOS5_OR_LATER) {
-        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound);
+    if ([[self componentsSeparatedByEmojis] count] > 1) {
+        return YES;
     }
     else {
-        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound ||
-                [self rangeOfCharacterFromSet:__iOS4EmojiCharacterSet].location != NSNotFound);
+        return NO;
     }
 }
 
