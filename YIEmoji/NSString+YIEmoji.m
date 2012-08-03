@@ -62,7 +62,7 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
             
             NSMutableString* emoji = [NSMutableString string];
             for (NSInteger i = 0; i < [bytes count]; i++) {
-                [emoji appendFormat:@"%C",[[bytes objectAtIndex:i] _hexIntValue]];
+                [emoji appendFormat:@"%C",(unsigned short)[[bytes objectAtIndex:i] _hexIntValue]];
             }
             
             [emojis addObject:emoji];
@@ -139,7 +139,7 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
         emoji0 = [__emojis objectAtIndex:0];
     }
     else {
-        emoji0 = [NSString stringWithFormat:@"%C",0xE001];
+        emoji0 = [NSString stringWithFormat:@"%C",(unsigned short)0xE001];
     }
     
     for (NSString* emoji in __emojis) {
