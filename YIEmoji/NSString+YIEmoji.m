@@ -7,7 +7,10 @@
 //
 
 #import "NSString+YIEmoji.h"
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
 #import "AFJSONUtilities.h"
+#endif
 
 static NSArray* __emojis = nil;
 //static NSCharacterSet* __emojiCharacterSet = nil;
@@ -46,7 +49,9 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
             json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         }
         else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
             json = AFJSONDecode(data, &error);
+#endif
         }
         
         if (error) {
