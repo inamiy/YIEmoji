@@ -16,9 +16,7 @@
 		1F79F6A31528AF2B00719E42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F6A21528AF2B00719E42 /* ViewController.m */; };
 		1F79F6B01528AFA700719E42 /* NSString+YIEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */; };
 		1F79F6B21528B08500719E42 /* YIEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F79F6B11528B08500719E42 /* YIEmoji.bundle */; };
-		48303FE7152DBEED00A7C4B9 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 48303FE6152DBEED00A7C4B9 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48304046152DC10F00A7C4B9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48304044152DC10F00A7C4B9 /* ViewController.xib */; };
-		4830404A152DC41800A7C4B9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 48304049152DC41800A7C4B9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +35,7 @@
 		1F79F6AE1528AFA700719E42 /* NSString+YIEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YIEmoji.h"; sourceTree = "<group>"; };
 		1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YIEmoji.m"; sourceTree = "<group>"; };
 		1F79F6B11528B08500719E42 /* YIEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YIEmoji.bundle; sourceTree = "<group>"; };
-		48303FE5152DBEED00A7C4B9 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
-		48303FE6152DBEED00A7C4B9 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
 		48304045152DC10F00A7C4B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		48304048152DC41800A7C4B9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		48304049152DC41800A7C4B9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +55,6 @@
 		1F79F67D1528AF2B00719E42 = {
 			isa = PBXGroup;
 			children = (
-				48303FE4152DBEED00A7C4B9 /* AFNetworking */,
-				48304047152DC41800A7C4B9 /* JSONKit */,
 				1F79F6A91528AF5000719E42 /* YIEmoji */,
 				1F79F6921528AF2B00719E42 /* YIEmojiDemo */,
 				1F79F68B1528AF2B00719E42 /* Frameworks */,
@@ -120,24 +112,6 @@
 				1F79F6AF1528AFA700719E42 /* NSString+YIEmoji.m */,
 			);
 			path = YIEmoji;
-			sourceTree = "<group>";
-		};
-		48303FE4152DBEED00A7C4B9 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				48303FE5152DBEED00A7C4B9 /* AFJSONUtilities.h */,
-				48303FE6152DBEED00A7C4B9 /* AFJSONUtilities.m */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		48304047152DC41800A7C4B9 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				48304048152DC41800A7C4B9 /* JSONKit.h */,
-				48304049152DC41800A7C4B9 /* JSONKit.m */,
-			);
-			path = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +182,6 @@
 				1F79F69D1528AF2B00719E42 /* AppDelegate.m in Sources */,
 				1F79F6A31528AF2B00719E42 /* ViewController.m in Sources */,
 				1F79F6B01528AFA700719E42 /* NSString+YIEmoji.m in Sources */,
-				48303FE7152DBEED00A7C4B9 /* AFJSONUtilities.m in Sources */,
-				4830404A152DC41800A7C4B9 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +227,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -273,7 +245,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -286,7 +258,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YIEmojiDemo/YIEmojiDemo-Prefix.pch";
 				INFOPLIST_FILE = "YIEmojiDemo/YIEmojiDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,7 +270,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YIEmojiDemo/YIEmojiDemo-Prefix.pch";
 				INFOPLIST_FILE = "YIEmojiDemo/YIEmojiDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

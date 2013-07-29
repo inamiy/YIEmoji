@@ -14,19 +14,15 @@
 
 static NSArray* __emojis = nil;
 //static NSCharacterSet* __emojiCharacterSet = nil;
-static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
-
-#define YI_IOS5_OR_LATER ([[[UIDevice currentDevice] systemVersion] compare:@"5.0"] != NSOrderedAscending)
 
 
 @implementation NSString (YIEmoji)
 
 + (void)load
 {
-//    // NOTE: this won't work when JSONKit is included in certain static library
-//    @autoreleasepool {
-//        [self setupYIEmoji];
-//    }
+    @autoreleasepool {
+        [self setupYIEmoji];
+    }
 }
 
 + (void)setupYIEmoji
@@ -42,17 +38,8 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
         
         NSData* data = [NSData dataWithContentsOfURL:dataURL];
         
-        NSArray* json = nil;
         NSError* error = nil;
-        
-        if (YI_IOS5_OR_LATER) {
-            json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        }
-        else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
-            json = AFJSONDecode(data, &error);
-#endif
-        }
+        NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         
         if (error) {
             NSLog(@"YIEmoji error: %@",error.localizedDescription);
@@ -60,7 +47,7 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
         }
         
         NSMutableArray* emojis = [NSMutableArray array];
-        NSMutableCharacterSet* emojiCharacterSet = [[NSMutableCharacterSet alloc] init];
+        //NSMutableCharacterSet* emojiCharacterSet = [[NSMutableCharacterSet alloc] init];
         
         for (NSString* utf16 in json) {
             NSArray* bytes = [utf16 componentsSeparatedByString:@" "];
@@ -71,59 +58,19 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
             }
             
             [emojis addObject:emoji];
-            [emojiCharacterSet addCharactersInString:emoji];
+            //[emojiCharacterSet addCharactersInString:emoji];
         }
         
-        __emojis = emojis;
+        // NOTE: using characterSet (componentsSeparatedByCharactersInSet) is unreliable
         //__emojiCharacterSet = emojiCharacterSet;
+        __emojis = emojis;
         
-        
-        //
-        // iOS4 Emoji
-        // http://d.hatena.ne.jp/kurusaki/20100425/1272187639
-        //
-        if (!YI_IOS5_OR_LATER) {
-            
-            NSMutableString* iOS4EmojiString = [NSMutableString string];
-            for (unichar u = 0xE001; u <= 0xE05A; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE101; u <= 0xE15A; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE201; u <= 0xE253; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE301; u <= 0xE34D; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE401; u <= 0xE44C; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            for (unichar u = 0xE501; u <= 0xE537; u++) {
-                [iOS4EmojiString appendFormat:@"%C",u];
-            }
-            
-            NSMutableCharacterSet* iOS4EmojiCharacterSet = [[NSMutableCharacterSet alloc] init];
-            [iOS4EmojiCharacterSet addCharactersInString:iOS4EmojiString];
-            
-            __iOS4EmojiCharacterSet = iOS4EmojiCharacterSet;
-        }
     });
 }
 
 - (BOOL)hasEmoji
 {
-    // NOTE: using characterSet is unreliable
-//    [NSString setupYIEmoji];
-//    
-//    if (YI_IOS5_OR_LATER) {
-//        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound);
-//    }
-//    else {
-//        return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound ||
-//                [self rangeOfCharacterFromSet:__iOS4EmojiCharacterSet].location != NSNotFound);
-//    }
+//    return ([self rangeOfCharacterFromSet:__emojiCharacterSet].location != NSNotFound);
     
     if ([[self componentsSeparatedByEmojis] count] > 1) {
         return YES;
@@ -135,28 +82,15 @@ static NSCharacterSet* __iOS4EmojiCharacterSet = nil;
 
 - (NSArray *)componentsSeparatedByEmojis
 {
-    [NSString setupYIEmoji];
-    
     NSMutableString* mutableString = [self mutableCopy];
     
-    NSString* emoji0 = nil;
-    if (YI_IOS5_OR_LATER) {
-        emoji0 = [__emojis objectAtIndex:0];
-    }
-    else {
-        emoji0 = [NSString stringWithFormat:@"%C",(unsigned short)0xE001];
-    }
+    NSString* emoji0 = [__emojis objectAtIndex:0];
     
     for (NSString* emoji in __emojis) {
         [mutableString replaceOccurrencesOfString:emoji withString:emoji0 options:NSRegularExpressionSearch range:NSMakeRange(0, [mutableString length])];
     }
     
-    if (YI_IOS5_OR_LATER) {
-        return [mutableString componentsSeparatedByString:emoji0];
-    }
-    else {
-        return [mutableString componentsSeparatedByCharactersInSet:__iOS4EmojiCharacterSet];
-    }
+    return [mutableString componentsSeparatedByString:emoji0];
 }
 
 - (NSUInteger)emojiContainedTrueLength
