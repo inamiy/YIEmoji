@@ -27,12 +27,9 @@
     NSString* text = @"😄😊😃☺1⃣test2⃣☀☔☁⛄";        // iOS5
     text = [text stringByAppendingString:@"🐝"];    // iOS6
     
-    NSLog(@"text = %@",text);
-    NSLog(@"hasEmoji = %d",[text hasEmoji]);
-    NSLog(@"trueLength = %d",[text emojiContainedTrueLength]);
-    NSLog(@"emojiTrimmedString = %@",[text stringByTrimmingEmojis]);
-    
     self.textView.text = text;
+    
+    [self handleOKButton:nil];
 }
 
 - (void)viewDidUnload
