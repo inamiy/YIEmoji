@@ -1,7 +1,7 @@
 YIEmoji 1.0.0
 =============
 
-NSString addition for iOS Emoji.
+NSString addition for iOS5+ Emoji.
 
 Install via [CocoaPods](http://cocoapods.org/)
 ----------
@@ -9,6 +9,8 @@ Install via [CocoaPods](http://cocoapods.org/)
 ```
 pod 'YIEmoji'
 ```
+
+To support iOS4, see tag `0.1` for more info.
 
 Example
 -------
