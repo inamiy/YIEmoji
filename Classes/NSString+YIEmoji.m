@@ -8,10 +8,6 @@
 
 #import "NSString+YIEmoji.h"
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
-#import "AFJSONUtilities.h"
-#endif
-
 static NSArray* __emojis = nil;
 //static NSCharacterSet* __emojiCharacterSet = nil;
 
