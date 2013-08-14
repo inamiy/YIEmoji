@@ -1,4 +1,4 @@
-YIEmoji 1.0.0
+YIEmoji 1.0.1
 =============
 
 NSString addition for iOS5+ Emoji.
